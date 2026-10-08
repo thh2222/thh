@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHINKOU - Estética Automotiva de Luxo & Car Detail</title>
+  <meta name="description" content="Centro de excelência em estética automotiva de alta performance em São Paulo. Especialistas em PPF, Vitrificação Cerâmica, Polimento Técnico e Detalhamento de Supercarros.">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+
+  <!-- Google Fonts: Syne & Rajdhani for aggressive luxury titles, Plus Jakarta Sans for clean body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#070708',
+              dark: '#0C0C0E',
+              card: '#121216',
+              surface: '#18181D',
+              border: '#26262E',
+              orange: '#FF4500',
+              orangeHover: '#FF5714',
+              orangeGlow: 'rgba(255, 69, 0, 0.4)',
+              textMuted: '#9494A0',
+              silver: '#D1D5DB'
+            }
+          },
+          fontFamily: {
+            display: ['Rajdhani', 'sans-serif'],
+            heading: ['Syne', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif']
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 3s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' },
+            },
+            glow: {
+              '0%': { opacity: 0.35, filter: 'blur(30px)' },
+              '100%': { opacity: 0.7, filter: 'blur(45px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Styling & Luxury Finishes */
+    body {
+      background-color: #070708;
+      color: #E2E2E8;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+      selection-background-color: #FF4500;
+      selection-color: #ffffff;
+    }
+
+    ::selection {
+      background: #FF4500;
+      color: #ffffff;
+    }
+
+    /* Ambient noise overlay for textured luxury depth */
+    .bg-noise {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    /* Glow utilities */
+    .glow-orange-sm {
+      box-shadow: 0 0 20px -3px rgba(255, 69, 0, 0.45);
+    }
+    .glow-orange-lg {
+      box-shadow: 0 0 45px -5px rgba(255, 69, 0, 0.35);
+    }
+    .glow-orange-border {
+      box-shadow: 0 0 15px 0 rgba(255, 69, 0, 0.25) inset;
+    }
+
+    /* Glassmorphism */
+    .glass-card {
+      background: rgba(18, 18, 22, 0.75);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .glass-card-hover {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card-hover:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 69, 0, 0.5);
+      box-shadow: 0 14px 35px -8px rgba(0, 0, 0, 0.8), 0 0 22px -4px rgba(255, 69, 0, 0.3);
+    }
+
+    /* Gradient Text */
+    .text-gradient-orange {
+      background: linear-gradient(135deg, #FFF 0%, #FF8A50 40%, #FF4500 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-gradient-silver {
+      background: linear-gradient(180deg, #FFFFFF 0%, #A0A0AA 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Hide scrollbars but allow scrolling */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Range slider custom styling for interactive comparison */
+    input[type=range]::-webkit-slider-thumb {
+      pointer-events: all;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #FF4500;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 0 12px rgba(255, 69, 0, 0.8);
+      cursor: ew-resize;
+      -webkit-appearance: none;
+    }
+  </style>
+</head>
+<body class="bg-brand-black text-slate-100 antialiased relative">
+
+  <!-- BACKGROUND AMBIENT GLOWS -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[750px] h-[550px] bg-brand-orange/15 rounded-full blur-[140px] animate-glow"></div>
+    <div class="absolute top-[40%] -left-64 w-[500px] h-[500px] bg-brand-orange/10 rounded-full blur-[160px]"></div>
+    <div class="absolute bottom-20 -right-60 w-[600px] h-[600px] bg-brand-orange/15 rounded-full blur-[180px]"></div>
+    <div class="absolute inset-0 bg-noise opacity-30"></div>
+  </div>
+
+  <!-- TOP BAR NOTICE: LUXURY EXCLUSIVITY -->
+  <aside class="relative z-50 bg-[#0A0A0C] border-b border-white/5 py-2 px-4 text-xs tracking-widest uppercase text-center font-display font-semibold text-brand-textMuted flex items-center justify-center gap-3">
+    <span class="inline-block w-2 h-2 rounded-full bg-brand-orange animate-ping"></span>
+    <span>Atendimento Exclusivo sob Agendamento Técnico</span>
+    <span class="text-white/20">|</span>
+    <span class="text-brand-silver hidden sm:inline">São Paulo & Região</span>
+    <span class="text-white/20 hidden sm:inline">|</span>
+    <a href="tel:+5511992644725" class="text-brand-orange hover:underline font-bold tracking-normal hidden md:inline flex items-center gap-1">
+      (11) 99264-4725
+    </a>
+  </aside>
+
+  <!-- NAVBAR / HEADER -->
+  <header id="navbar" class="sticky top-0 z-40 transition-all duration-300 backdrop-blur-md bg-brand-black/80 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="relative w-12 h-12 rounded-lg overflow-hidden border border-brand-orange/40 p-0.5 bg-black/60 shadow-lg group-hover:border-brand-orange transition-colors">
+          <img src="assets/logo.jpg" alt="Logo SHINKOU Car Detail" class="w-full h-full object-cover rounded-md group-hover:scale-105 transition-transform duration-300">
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-extrabold text-2xl tracking-[0.2em] text-white leading-none group-hover:text-brand-orange transition-colors">
+            SHINKOU
+          </span>
+          <span class="text-[10px] uppercase font-display font-bold tracking-[0.35em] text-brand-orange mt-1">
+            Car Detail • Estética Automotiva
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium tracking-wider uppercase text-zinc-300">
+        <a href="#inicio" class="hover:text-brand-orange transition-colors">Início</a>
+        <a href="#servicos" class="hover:text-brand-orange transition-colors">Serviços</a>
+        <a href="#diferenciais" class="hover:text-brand-orange transition-colors">Diferenciais</a>
+        <a href="#portfolio" class="hover:text-brand-orange transition-colors">Garagem / Projetos</a>
+        <a href="#depoimentos" class="hover:text-brand-orange transition-colors">Avaliações</a>
+        <a href="#contato" class="hover:text-brand-orange transition-colors">Contato</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="https://www.instagram.com/shinkou.ea/" target="_blank" rel="noopener noreferrer" 
+           class="p-2.5 rounded-full border border-white/10 hover:border-brand-orange text-zinc-400 hover:text-brand-orange transition-colors"
+           title="Siga @shinkou.ea no Instagram">
+          <i data-lucide="instagram" class="w-4 h-4"></i>
+        </a>
+        
+        <a href="#contato" 
+           class="relative group overflow-hidden px-6 py-2.5 rounded-full bg-brand-orange hover:bg-brand-orangeHover text-white font-display font-bold text-sm tracking-wider uppercase glow-orange-sm transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2">
+          <span>Agendar Avaliação</span>
+          <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobileMenuBtn" class="lg:hidden p-2 text-zinc-300 hover:text-white focus:outline-none" aria-label="Abrir Menu">
+        <i data-lucide="menu" class="w-6 h-6" id="menuIcon"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-brand-dark/95 border-b border-brand-border px-6 py-6 transition-all">
+      <div class="flex flex-col gap-4 font-display text-base tracking-widest uppercase">
+        <a href="#inicio" class="mobile-link text-zinc-300 hover:text-brand-orange py-2 border-b border-white/5">Início</a>
+        <a href="#servicos" class="mobile-link text-zinc-300 hover:text-brand-orange py-2 border-b border-white/5">Serviços</a>
+        <a href="#diferenciais" class="mobile-link text-zinc-300 hover:text-brand-orange py-2 border-b border-white/5">Diferenciais</a>
+        <a href="#portfolio" class="mobile-link text-zinc-300 hover:text-brand-orange py-2 border-b border-white/5">Garagem / Projetos</a>
+        <a href="#depoimentos" class="mobile-link text-zinc-300 hover:text-brand-orange py-2 border-b border-white/5">Avaliações</a>
+        <a href="#contato" class="mobile-link text-zinc-300 hover:text-brand-orange py-2 border-b border-white/5">Contato</a>
+      </div>
+      <div class="mt-6 flex flex-col gap-3">
+        <a href="https://wa.me/5511992644725?text=Ol%C3%A1%21+Gostaria+de+agendar+uma+avalia%C3%A7%C3%A3o+na+Shinkou." target="_blank"
+           class="w-full text-center py-3 bg-brand-orange text-white font-display font-bold rounded-lg tracking-wider uppercase glow-orange-sm flex items-center justify-center gap-2">
+          <i data-lucide="message-circle" class="w-4 h-4"></i> Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+
+    <!-- ================================================================= -->
+    <!-- 1. HERO SECTION: ULTRA IMPACT FOR LUXURY VEHICLE OWNERS -->
+    <!-- ================================================================= -->
+    <section id="inicio" class="relative min-h-[92vh] flex items-center justify-center pt-8 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      
+      <!-- Studio Grid / Background Accent Lines -->
+      <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+        <div class="w-full h-full bg-[radial-gradient(#FF4500_1px,transparent_1px)] [background-size:32px_32px]"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+        
+        <!-- Left Column: Copy & High-Conversion CTAs -->
+        <div class="lg:col-span-7 text-center lg:text-left space-y-7">
+          
+          <!-- Top Badge -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-brand-orange/40 bg-brand-orange/10 backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-brand-orange shadow-[0_0_8px_#FF4500]"></span>
+            <span class="text-xs font-display font-bold uppercase tracking-widest text-brand-orange">
+              Estúdio de Alta Precisão & Detalhamento Técnico
+            </span>
+          </div>
+
+          <!-- Main Title -->
+          <h1 class="font-display font-extrabold text-4xl sm:text-6xl xl:text-7xl uppercase tracking-tight text-white leading-[1.05]">
+            O Máximo em <br class="hidden sm:inline">
+            <span class="text-gradient-orange drop-shadow-lg">Perfeição Automotiva</span>
+          </h1>
+
+          <!-- Commercial Subtitle -->
+          <p class="text-brand-textMuted text-base sm:text-lg max-w-2xl font-normal leading-relaxed mx-auto lg:mx-0">
+            Tratamentos exclusivos em <strong class="text-white font-medium">Vitrificação Cerâmica</strong>, <strong class="text-white font-medium">PPF (Paint Protection Film)</strong>, <strong class="text-white font-medium">Polimento Técnico</strong> e <strong class="text-white font-medium">Detalhamento Minucioso</strong> para entusiastas e proprietários de veículos premium que exigem acabamento espelhado e proteção definitiva.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#contato" 
+               class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-orange to-[#FF6200] hover:from-brand-orangeHover hover:to-brand-orange text-white font-display font-extrabold text-base tracking-widest uppercase glow-orange-sm hover:glow-orange-lg transition-all duration-300 transform hover:-translate-y-1 text-center flex items-center justify-center gap-3">
+              <span>Solicitar Orçamento Exclusivo</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+
+            <a href="#servicos" 
+               class="w-full sm:w-auto px-8 py-4 rounded-xl border border-white/15 hover:border-brand-orange bg-brand-card/60 backdrop-blur-md text-zinc-200 hover:text-white font-display font-bold text-base tracking-widest uppercase transition-all duration-300 text-center flex items-center justify-center gap-2">
+              <i data-lucide="shield-check" class="w-5 h-5 text-brand-orange"></i>
+              <span>Conhecer Tratamentos</span>
+            </a>
+          </div>
+
+          <!-- Quick Trust Bullets -->
+          <div class="pt-6 border-t border-white/10 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs font-medium text-zinc-400">
+            <div class="flex items-center gap-2 justify-center lg:justify-start">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange shrink-0"></i>
+              <span>Produtos 100% Importados</span>
+            </div>
+            <div class="flex items-center gap-2 justify-center lg:justify-start">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange shrink-0"></i>
+              <span>Estúdio Climatizado & LED 360°</span>
+            </div>
+            <div class="flex items-center gap-2 justify-center lg:justify-start col-span-2 sm:col-span-1">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-orange shrink-0"></i>
+              <span>Garantia de Entrega Perfeita</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Visual Showcase (With Interactive Studio Switcher) -->
+        <div class="lg:col-span-5 relative">
+          
+          <!-- Radial Ambient Backlight -->
+          <div class="absolute inset-0 bg-brand-orange/20 rounded-3xl blur-[80px] -z-10 transform scale-90"></div>
+
+          <!-- Main Vehicle Showcase Frame -->
+          <div class="relative rounded-2xl p-2 bg-gradient-to-b from-white/15 via-white/5 to-transparent border border-white/10 shadow-2xl backdrop-blur-xl group">
+            
+            <div class="relative overflow-hidden rounded-xl bg-brand-card aspect-[4/5] sm:aspect-[4/4.5] lg:aspect-[4/5]">
+              <img id="heroVehicleImg" 
+                   src="assets/portfolio-black-suv-angle.jpg" 
+                   alt="Veículo com Espelhamento Técnico e Vitrificação Shinkou" 
+                   class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+              
+              <!-- Dark gradient overlay for bottom badge legibility -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+
+              <!-- Top floating badge: Ceramic Coating Verified -->
+              <div class="absolute top-4 left-4 flex items-center gap-2 bg-brand-black/85 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-brand-orange/40 shadow-xl">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-orange animate-pulse"></span>
+                <span id="heroBadgeText" class="text-[11px] font-display font-bold uppercase tracking-widest text-white">
+                  Espelhamento & Vitrificação 9H
+                </span>
+              </div>
+
+              <!-- Top floating right tag: Shinkou Plate -->
+              <div class="absolute top-4 right-4 bg-brand-black/85 backdrop-blur-md px-3 py-1 rounded border border-white/15">
+                <span class="text-[10px] font-mono font-bold tracking-widest text-zinc-400">ESTÚDIO SHINKOU</span>
+              </div>
+
+              <!-- Vehicle Switcher Pills inside Hero Image -->
+              <div class="absolute top-16 right-4 flex flex-col gap-1.5 z-20">
+                <button onclick="switchHeroCar('assets/portfolio-black-suv-angle.jpg', 'Espelhamento & Vitrificação 9H', 'SUV Black Edition', 'Correção de Verniz & Acabamento Espelho', this)" 
+                        class="hero-car-tab active px-2.5 py-1 rounded bg-brand-orange text-white text-[10px] font-display font-bold uppercase tracking-wider border border-brand-orange/40 shadow-lg text-left transition-all">
+                  SUV Black
+                </button>
+                <button onclick="switchHeroCar('assets/portfolio-bmw-front.jpg', 'Polimento Técnico Alemão', 'BMW X6 Prata Metálico', 'Nitidez Óptica e Selagem Cerâmica', this)" 
+                        class="hero-car-tab px-2.5 py-1 rounded bg-brand-black/80 hover:bg-brand-surface text-zinc-300 text-[10px] font-display font-bold uppercase tracking-wider border border-white/15 text-left transition-all">
+                  BMW X6
+                </button>
+                <button onclick="switchHeroCar('assets/portfolio-discovery-front.jpg', 'Proteção Cerâmica Full', 'Land Rover Discovery', 'Brilho White Glow & Repelência UV', this)" 
+                        class="hero-car-tab px-2.5 py-1 rounded bg-brand-black/80 hover:bg-brand-surface text-zinc-300 text-[10px] font-display font-bold uppercase tracking-wider border border-white/15 text-left transition-all">
+                  Discovery
+                </button>
+              </div>
+
+              <!-- Bottom Glass Card on Car -->
+              <div class="absolute bottom-4 inset-x-4 p-4 rounded-xl bg-brand-black/85 backdrop-blur-md border border-white/10 flex items-center justify-between">
+                <div>
+                  <p id="heroSubText" class="text-xs uppercase font-display font-bold tracking-wider text-brand-orange">SUV Black Edition</p>
+                  <p id="heroTitleText" class="text-sm font-semibold text-white">Correção de Verniz & Acabamento Espelho</p>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-brand-orange/20 border border-brand-orange/50 flex items-center justify-center text-brand-orange">
+                  <i data-lucide="sparkles" class="w-5 h-5"></i>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Floating mini-card 1: Technical Engine Wash (Bottom Left) -->
+          <div class="hidden sm:flex absolute -bottom-6 -left-8 p-3 rounded-xl bg-brand-dark/95 border border-brand-orange/30 shadow-2xl backdrop-blur-xl items-center gap-3 animate-float max-w-xs z-20">
+            <div class="w-14 h-14 rounded-lg overflow-hidden shrink-0 border border-white/10">
+              <img src="assets/portfolio-engine.png" alt="Lavagem Técnica de Motor" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <p class="text-[11px] uppercase font-display font-bold text-brand-orange tracking-wider">Detalhamento Técnico</p>
+              <p class="text-xs text-zinc-200 font-medium">Cofre de motor Mercedes-Benz 100% restaurado</p>
+            </div>
+          </div>
+
+          <!-- Floating mini-card 2: Luxury Leather Interior (Top/Right Offset) -->
+          <div class="hidden sm:flex absolute -top-6 -right-6 p-3 rounded-xl bg-brand-dark/95 border border-white/10 shadow-2xl backdrop-blur-xl items-center gap-3 animate-float max-w-xs z-20" style="animation-delay: 2s;">
+            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 border border-brand-orange/30">
+              <img src="assets/portfolio-interior-leather.jpg" alt="Interior Shinkou Couro Diamantado" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <p class="text-[10px] uppercase font-display font-bold text-brand-orange tracking-wider">Couro Diamantado</p>
+              <p class="text-xs text-white font-medium">Higienização Nobre Shinkou</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================================================= -->
+    <!-- 2. SOCIAL PROOF / METRICS IN NUMBERS -->
+    <!-- ================================================================= -->
+    <section class="relative z-20 py-10 bg-brand-dark/80 border-y border-white/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 text-center">
+          
+          <!-- Metric 1 -->
+          <div class="p-4 border-r last:border-r-0 border-white/5">
+            <div class="font-display font-extrabold text-4xl sm:text-5xl text-white tracking-tight flex items-center justify-center gap-1">
+              <span>1.000</span><span class="text-brand-orange">+</span>
+            </div>
+            <p class="text-xs uppercase font-display font-bold tracking-widest text-brand-textMuted mt-2">
+              Supercarros & Veículos Protegidos
+            </p>
+          </div>
+
+          <!-- Metric 2 -->
+          <div class="p-4 border-r md:border-r-0 lg:border-r border-white/5">
+            <div class="font-display font-extrabold text-4xl sm:text-5xl text-brand-orange tracking-tight">
+              100%
+            </div>
+            <p class="text-xs uppercase font-display font-bold tracking-widest text-brand-textMuted mt-2">
+              Garantia & Precisão Milimétrica
+            </p>
+          </div>
+
+          <!-- Metric 3 -->
+          <div class="p-4 border-r last:border-r-0 border-white/5">
+            <div class="font-display font-extrabold text-4xl sm:text-5xl text-white tracking-tight flex items-center justify-center gap-1">
+              <span>10</span><span class="text-brand-orange">+</span>
+            </div>
+            <p class="text-xs uppercase font-display font-bold tracking-widest text-brand-textMuted mt-2">
+              Anos de Maestria no Segmento
+            </p>
+          </div>
+
+          <!-- Metric 4 -->
+          <div class="p-4">
+            <div class="font-display font-extrabold text-4xl sm:text-5xl text-brand-orange tracking-tight flex items-center justify-center gap-1">
+              <span>5.0</span>
+              <span class="text-2xl text-yellow-400">★</span>
+            </div>
+            <p class="text-xs uppercase font-display font-bold tracking-widest text-brand-textMuted mt-2">
+              Avaliação Máxima dos Clientes
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================= -->
+    <!-- 3. DETAILED SERVICES MENU (GRID WITH FLYER EXACT SPECIFICATIONS) -->
+    <!-- ================================================================= -->
+    <section id="servicos" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-brand-orange/30 bg-brand-orange/5">
+          <i data-lucide="wrench" class="w-3.5 h-3.5 text-brand-orange"></i>
+          <span class="text-xs font-display font-bold tracking-widest uppercase text-brand-orange">Catálogo de Procedimentos</span>
+        </div>
+        <h2 class="font-display font-extrabold text-3xl sm:text-5xl uppercase tracking-tight text-white">
+          Serviços de <span class="text-gradient-orange">Alta Performance</span>
+        </h2>
+        <p class="text-brand-textMuted text-sm sm:text-base">
+          Trabalhamos sob os mais rigorosos padrões da escola internacional de Car Detailing. Escolha o tratamento ideal para o seu veículo.
+        </p>
+      </div>
+
+      <!-- Grid of Services -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Card 1: PPF -->
+        <article class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group">
+          <div class="absolute -right-12 -top-12 w-28 h-28 bg-brand-orange/10 rounded-full blur-2xl group-hover:bg-brand-orange/25 transition-all"></div>
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-surface border border-brand-orange/30 flex items-center justify-center text-brand-orange mb-6 group-hover:scale-110 group-hover:border-brand-orange transition-all">
+              <i data-lucide="shield" class="w-7 h-7"></i>
+            </div>
+            <span class="text-[11px] font-display font-bold uppercase tracking-widest text-brand-orange">Proteção Máxima</span>
+            <h3 class="font-display font-bold text-xl uppercase tracking-wider text-white mt-1 mb-3">
+              PPF (Paint Protection Film)
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Película de poliuretano auto-regenerativa com propriedades hidrofóbicas. Protege a pintura original contra pedriscos, batidas de porta, intempéries e raios UV sem alterar o tom da cor.
+            </p>
+            <ul class="mt-4 space-y-1.5 text-[11px] text-zinc-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Auto-cura térmica de micro-riscos</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Opção High Gloss ou Satin Matte</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5">
+            <a href="#contato" onclick="selectService('PPF (Paint Protection Film)')" class="text-xs font-display font-bold tracking-widest uppercase text-brand-orange hover:text-white flex items-center gap-2 group-hover:gap-3 transition-all">
+              <span>Agendar PPF</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 2: Vitrificação Ceramic -->
+        <article class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group border-brand-orange/40 glow-orange-border">
+          <div class="absolute top-3 right-3 bg-brand-orange text-white text-[10px] font-display font-extrabold uppercase px-2 py-0.5 rounded tracking-widest">
+            Mais Pedido
+          </div>
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-surface border border-brand-orange/40 flex items-center justify-center text-brand-orange mb-6 group-hover:scale-110 group-hover:border-brand-orange transition-all">
+              <i data-lucide="gem" class="w-7 h-7"></i>
+            </div>
+            <span class="text-[11px] font-display font-bold uppercase tracking-widest text-brand-orange">Ceramic Coating 9H</span>
+            <h3 class="font-display font-bold text-xl uppercase tracking-wider text-white mt-1 mb-3">
+              Vitrificação Cerâmica
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Aplicação de nanopartículas cerâmicas que criam uma camada de sílica ultra-resistente sobre a pintura, couro, vidros, plásticos e rodas com altíssima hidro-repelência.
+            </p>
+            <ul class="mt-4 space-y-1.5 text-[11px] text-zinc-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Durabilidade de até 3 a 5 anos</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Brilho espelhado profundo molhado</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5">
+            <a href="#contato" onclick="selectService('Vitrificação Cerâmica (Ceramic Coating)')" class="text-xs font-display font-bold tracking-widest uppercase text-brand-orange hover:text-white flex items-center gap-2 group-hover:gap-3 transition-all">
+              <span>Agendar Vitrificação</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 3: Polimento Técnico -->
+        <article class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-surface border border-brand-orange/30 flex items-center justify-center text-brand-orange mb-6 group-hover:scale-110 group-hover:border-brand-orange transition-all">
+              <i data-lucide="disc" class="w-7 h-7"></i>
+            </div>
+            <span class="text-[11px] font-display font-bold uppercase tracking-widest text-brand-orange">Correção de Verniz</span>
+            <h3 class="font-display font-bold text-xl uppercase tracking-wider text-white mt-1 mb-3">
+              Polimento Técnico
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Correção milimétrica com remoção de swirls (teias de aranha), hologramas e riscos superficiais. Recuperação total da nitidez óptica e reflexos perfeitos no verniz.
+            </p>
+            <ul class="mt-4 space-y-1.5 text-[11px] text-zinc-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Inspeção com medidor de micra</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Acabamento livre de hologramas</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5">
+            <a href="#contato" onclick="selectService('Polimento Técnico de Pintura')" class="text-xs font-display font-bold tracking-widest uppercase text-brand-orange hover:text-white flex items-center gap-2 group-hover:gap-3 transition-all">
+              <span>Agendar Polimento</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 4: Detalhamento Interno & Higienização -->
+        <article class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-14 h-14 rounded-xl bg-brand-surface border border-brand-orange/30 flex items-center justify-center text-brand-orange group-hover:scale-110 group-hover:border-brand-orange transition-all">
+                <i data-lucide="armchair" class="w-7 h-7"></i>
+              </div>
+              <span class="text-[10px] font-display font-bold uppercase px-2 py-0.5 rounded bg-brand-orange/20 text-brand-orange border border-brand-orange/30">
+                Couro & Cabine
+              </span>
+            </div>
+            
+            <!-- Real photo preview pill -->
+            <div class="relative h-28 rounded-xl overflow-hidden mb-4 border border-white/10 group-hover:border-brand-orange/40 transition-colors">
+              <img src="assets/portfolio-interior-leather.jpg" alt="Interior Shinkou Couro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+              <span class="absolute bottom-2 left-2 text-[10px] font-display font-bold uppercase text-white tracking-wider flex items-center gap-1">
+                <i data-lucide="sparkles" class="w-3 h-3 text-brand-orange"></i> Couro Diamantado Shinkou
+              </span>
+            </div>
+
+            <span class="text-[11px] font-display font-bold uppercase tracking-widest text-brand-orange">Interior Impecável</span>
+            <h3 class="font-display font-bold text-xl uppercase tracking-wider text-white mt-1 mb-2">
+              Higienização & Interior
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Higienização detalhada de todo o habitáculo. Limpeza a vapor e hidratação com proteção cerâmica fosca para couros nobres, carpetes, alcantara e plásticos internos.
+            </p>
+            <ul class="mt-4 space-y-1.5 text-[11px] text-zinc-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Couro macio e com toque original</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Eliminação de odores e bactérias</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5">
+            <a href="#contato" onclick="selectService('Higienização e Detalhamento Interno')" class="text-xs font-display font-bold tracking-widest uppercase text-brand-orange hover:text-white flex items-center gap-2 group-hover:gap-3 transition-all">
+              <span>Agendar Interior</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 5: Lavagem Técnica de Motor -->
+        <article class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-surface border border-brand-orange/30 flex items-center justify-center text-brand-orange mb-6 group-hover:scale-110 group-hover:border-brand-orange transition-all">
+              <i data-lucide="cpu" class="w-7 h-7"></i>
+            </div>
+            <span class="text-[11px] font-display font-bold uppercase tracking-widest text-brand-orange">Engenharia Limpa</span>
+            <h3 class="font-display font-bold text-xl uppercase tracking-wider text-white mt-1 mb-3">
+              Lavagem Técnica de Motor
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Limpeza minuciosa com isolamento técnico dos componentes eletrônicos, vapor seco e aplicação de verniz de motor protetor dielétrico resistente a altas temperaturas.
+            </p>
+            <ul class="mt-4 space-y-1.5 text-[11px] text-zinc-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Proteção contra oxidação e ressecamento</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Procedimento 100% seguro para eletrônica</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5">
+            <a href="#contato" onclick="selectService('Lavagem Técnica de Motor')" class="text-xs font-display font-bold tracking-widest uppercase text-brand-orange hover:text-white flex items-center gap-2 group-hover:gap-3 transition-all">
+              <span>Agendar Motor</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 6: Polimento e Cristalização de Vidros -->
+        <article class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-surface border border-brand-orange/30 flex items-center justify-center text-brand-orange mb-6 group-hover:scale-110 group-hover:border-brand-orange transition-all">
+              <i data-lucide="scan-line" class="w-7 h-7"></i>
+            </div>
+            <span class="text-[11px] font-display font-bold uppercase tracking-widest text-brand-orange">Visibilidade Cristalina</span>
+            <h3 class="font-display font-bold text-xl uppercase tracking-wider text-white mt-1 mb-3">
+              Polimento de Vidros
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Remoção profunda de chuva ácida, marcas d’água (water spots), manchas químicas e contaminações dos vidros, com cristalização hidrofóbica repelente de chuva.
+            </p>
+            <ul class="mt-4 space-y-1.5 text-[11px] text-zinc-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Visibilidade nítida sob temporais</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Reduz desgaste das palhetas</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5">
+            <a href="#contato" onclick="selectService('Polimento de Vidros')" class="text-xs font-display font-bold tracking-widest uppercase text-brand-orange hover:text-white flex items-center gap-2 group-hover:gap-3 transition-all">
+              <span>Agendar Vidros</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 7: Revitalização de Faróis -->
+        <article class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-surface border border-brand-orange/30 flex items-center justify-center text-brand-orange mb-6 group-hover:scale-110 group-hover:border-brand-orange transition-all">
+              <i data-lucide="sun" class="w-7 h-7"></i>
+            </div>
+            <span class="text-[11px] font-display font-bold uppercase tracking-widest text-brand-orange">Óptica Restaurada</span>
+            <h3 class="font-display font-bold text-xl uppercase tracking-wider text-white mt-1 mb-3">
+              Revitalização de Faróis
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Lixamento técnico de policarbonato, polimento óptico e aplicação de selante cerâmico ou PPF fumê/transparente para proteção contra o amarelamento do sol.
+            </p>
+            <ul class="mt-4 space-y-1.5 text-[11px] text-zinc-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Restaura 100% da transparência</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Melhora foco e segurança noturna</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5">
+            <a href="#contato" onclick="selectService('Revitalização de Faróis')" class="text-xs font-display font-bold tracking-widest uppercase text-brand-orange hover:text-white flex items-center gap-2 group-hover:gap-3 transition-all">
+              <span>Agendar Faróis</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 8: Lavagem Detalhada & Descontaminação -->
+        <article class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden group">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-brand-surface border border-brand-orange/30 flex items-center justify-center text-brand-orange mb-6 group-hover:scale-110 group-hover:border-brand-orange transition-all">
+              <i data-lucide="droplets" class="w-7 h-7"></i>
+            </div>
+            <span class="text-[11px] font-display font-bold uppercase tracking-widest text-brand-orange">Cuidado Sem Riscos</span>
+            <h3 class="font-display font-bold text-xl uppercase tracking-wider text-white mt-1 mb-3">
+              Lavagem Detalhada
+            </h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Técnica dos dois baldes com shampoos de pH neutro, pincelamento minucioso de emblemas, caixas de roda, descontaminação ferrosa de rodas e enceramento nobre.
+            </p>
+            <ul class="mt-4 space-y-1.5 text-[11px] text-zinc-300">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Zero atrito que causa microrriscos</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-brand-orange"></i> Toque suave e repelência imediata</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5">
+            <a href="#contato" onclick="selectService('Lavagem Detalhada & Descontaminação')" class="text-xs font-display font-bold tracking-widest uppercase text-brand-orange hover:text-white flex items-center gap-2 group-hover:gap-3 transition-all">
+              <span>Agendar Lavagem</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Banner Services Reference Download / View -->
+      <div class="mt-14 p-6 rounded-2xl border border-brand-orange/30 bg-brand-dark/90 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-lg bg-brand-orange/15 border border-brand-orange/40 flex items-center justify-center text-brand-orange shrink-0">
+            <i data-lucide="calendar" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="font-display font-bold text-lg uppercase text-white tracking-wider">Atendimento Somente com Agendamento Prévio</h4>
+            <p class="text-xs text-zinc-400">Garantimos dedicação exclusiva e sigilosa ao seu veículo durante cada etapa do projeto.</p>
+          </div>
+        </div>
+        <a href="#contato" class="px-6 py-3 rounded-lg bg-brand-orange hover:bg-brand-orangeHover text-white font-display font-bold text-xs uppercase tracking-widest glow-orange-sm transition-all whitespace-nowrap">
+          Reservar Minha Vaga no Estúdio
+        </a>
+      </div>
+
+    </section>
+
+
+    <!-- ================================================================= -->
+    <!-- 4. BEFORE & AFTER INTERACTIVE SIMULATOR (HIGH ENGAGEMENT) -->
+    <!-- ================================================================= -->
+    <section class="py-20 bg-brand-dark/50 border-y border-white/5 relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <span class="text-xs font-display font-bold tracking-widest uppercase text-brand-orange">Simulador de Resultado</span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl uppercase tracking-tight text-white">
+            O Impacto da <span class="text-gradient-orange">Correção de Verniz</span>
+          </h2>
+          <p class="text-brand-textMuted text-xs sm:text-sm">
+            Arraste o botão interativo para ver a diferença entre uma pintura oxidada e com marcas de lavagens incorretas vs. o padrão espelhado Shinkou.
+          </p>
+        </div>
+
+        <!-- Comparison Interactive Widget -->
+        <div class="relative w-full max-w-3xl mx-auto aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 shadow-2xl select-none" id="comparisonWrapper">
+          
+          <!-- "AFTER" (SHINKOU FINISH) - Base Image -->
+          <div class="absolute inset-0 w-full h-full">
+            <img src="assets/portfolio-discovery.png" alt="Depois: Verniz espelhado Shinkou" class="w-full h-full object-cover">
+            <div class="absolute bottom-4 right-4 bg-brand-black/90 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-brand-orange text-xs font-display font-bold tracking-widest text-brand-orange uppercase">
+              DEPOIS: PADRÃO SHINKOU (9H GLOSS)
+            </div>
+          </div>
+
+          <!-- "BEFORE" (ORIGINAL/SWIRLS) - Clipped Overlay -->
+          <div id="beforeOverlay" class="absolute inset-y-0 left-0 overflow-hidden w-1/2 border-r-2 border-brand-orange shadow-[0_0_15px_#FF4500]">
+            <div class="relative w-[200%] h-full filter contrast-75 brightness-75">
+              <img src="assets/portfolio-discovery.png" alt="Antes: Swirls e opacidade" class="w-1/2 h-full object-cover grayscale-[40%]">
+              <!-- Swirl marks texture simulation -->
+              <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15)_1px,transparent_1px)] bg-[size:10px_10px] opacity-60"></div>
+            </div>
+            <div class="absolute bottom-4 left-4 bg-brand-black/90 backdrop-blur-md px-3.5 py-1.5 rounded-lg border border-white/20 text-xs font-display font-bold tracking-widest text-zinc-300 uppercase">
+              ANTES: SWIRLS & OPACO
+            </div>
+          </div>
+
+          <!-- Slider Range Control -->
+          <input type="range" min="0" max="100" value="50" id="comparisonSlider" 
+                 class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30" 
+                 aria-label="Controle de antes e depois">
+
+          <!-- Visible Slider Knob Indicator -->
+          <div id="sliderHandle" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-brand-orange border-2 border-white flex items-center justify-center text-white pointer-events-none shadow-[0_0_20px_#FF4500] z-20">
+            <i data-lucide="chevrons-left-right" class="w-5 h-5"></i>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================================= -->
+    <!-- 5. WHY SHINKOU (BRAND DIFFERENTIATORS / LUXURY STANDARDS) -->
+    <!-- ================================================================= -->
+    <section id="diferenciais" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Accented Copy -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-orange/30 bg-brand-orange/5">
+            <i data-lucide="award" class="w-3.5 h-3.5 text-brand-orange"></i>
+            <span class="text-xs font-display font-bold tracking-widest uppercase text-brand-orange">Por que a Shinkou?</span>
+          </div>
+
+          <h2 class="font-display font-extrabold text-3xl sm:text-5xl uppercase tracking-tight text-white leading-tight">
+            A Obsessão Pelo <br>
+            <span class="text-gradient-orange">Invisível a Olho Nu</span>
+          </h2>
+
+          <p class="text-brand-textMuted text-sm sm:text-base leading-relaxed">
+            Não somos um lava-rápido comum. A Shinkou foi concebida como um ateliê de alta precisão para colecionadores e donos de supercarros que não toleram imperfeições.
+          </p>
+
+          <div class="p-5 rounded-xl border border-brand-orange/20 bg-brand-surface/70 space-y-2">
+            <span class="text-xs font-display font-bold uppercase text-brand-orange tracking-wider">Compromisso com o Cliente</span>
+            <p class="text-xs text-zinc-300">
+              Cada carro recebe um dossiê técnico de entrada e saída com laudo de espessura de verniz e instruções de manutenção pós-entrega.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Modern Interactive Accordion / Cards -->
+        <div class="lg:col-span-7 space-y-4">
+
+          <!-- Item 1 -->
+          <div class="glass-card rounded-xl p-5 border border-white/5 hover:border-brand-orange/50 transition-all cursor-pointer" onclick="toggleAccordion('acc-1')">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-brand-orange/15 border border-brand-orange/30 flex items-center justify-center text-brand-orange shrink-0">
+                  <i data-lucide="flask-conical" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-display font-bold text-base sm:text-lg uppercase text-white tracking-wider">
+                  Tecnologia & Insumos Importados
+                </h3>
+              </div>
+              <i data-lucide="chevron-down" id="icon-acc-1" class="w-5 h-5 text-brand-orange transition-transform duration-300"></i>
+            </div>
+            <div id="acc-1" class="mt-4 pt-3 border-t border-white/5 text-xs sm:text-sm text-zinc-400 leading-relaxed hidden">
+              Utilizamos exclusivamente compostos polidores, películas e revestimentos cerâmicos das líderes globais (Gyeon, CarPro, Rupes, Meguiar's Pro e Xpel), testados e homologados para vernizes alemães, italianos e asiáticos.
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="glass-card rounded-xl p-5 border border-white/5 hover:border-brand-orange/50 transition-all cursor-pointer" onclick="toggleAccordion('acc-2')">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-brand-orange/15 border border-brand-orange/30 flex items-center justify-center text-brand-orange shrink-0">
+                  <i data-lucide="sun-medium" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-display font-bold text-base sm:text-lg uppercase text-white tracking-wider">
+                  Ambiente Climatizado & Iluminação Técnica LED 360°
+                </h3>
+              </div>
+              <i data-lucide="chevron-down" id="icon-acc-2" class="w-5 h-5 text-brand-orange transition-transform duration-300"></i>
+            </div>
+            <div id="acc-2" class="mt-4 pt-3 border-t border-white/5 text-xs sm:text-sm text-zinc-400 leading-relaxed hidden">
+              Estúdio com temperatura e umidade controladas para cura perfeita dos vitrificadores, equipado com malha luminosa CRI 98+ que revela hologramas invisíveis à luz solar comum.
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="glass-card rounded-xl p-5 border border-white/5 hover:border-brand-orange/50 transition-all cursor-pointer" onclick="toggleAccordion('acc-3')">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-brand-orange/15 border border-brand-orange/30 flex items-center justify-center text-brand-orange shrink-0">
+                  <i data-lucide="badge-check" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-display font-bold text-base sm:text-lg uppercase text-white tracking-wider">
+                  Profissionais Certificados em Supercarros
+                </h3>
+              </div>
+              <i data-lucide="chevron-down" id="icon-acc-3" class="w-5 h-5 text-brand-orange transition-transform duration-300"></i>
+            </div>
+            <div id="acc-3" class="mt-4 pt-3 border-t border-white/5 text-xs sm:text-sm text-zinc-400 leading-relaxed hidden">
+              Nossa equipe acumula centenas de horas em treinamento especializado para manusear com segurança materiais como fibra de carbono, couro nappa, alcantara e pinturas sensíveis.
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="glass-card rounded-xl p-5 border border-white/5 hover:border-brand-orange/50 transition-all cursor-pointer" onclick="toggleAccordion('acc-4')">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-brand-orange/15 border border-brand-orange/30 flex items-center justify-center text-brand-orange shrink-0">
+                  <i data-lucide="smartphone" class="w-5 h-5"></i>
+                </div>
+                <h3 class="font-display font-bold text-base sm:text-lg uppercase text-white tracking-wider">
+                  Atendimento VIP & Atualizações em Tempo Real
+                </h3>
+              </div>
+              <i data-lucide="chevron-down" id="icon-acc-4" class="w-5 h-5 text-brand-orange transition-transform duration-300"></i>
+            </div>
+            <div id="acc-4" class="mt-4 pt-3 border-t border-white/5 text-xs sm:text-sm text-zinc-400 leading-relaxed hidden">
+              Você recebe fotos e vídeos em alta resolução no WhatsApp a cada etapa do processo do seu veículo. Total transparência, tranquilidade e sigilo.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================================= -->
+    <!-- 6. PORTFOLIO / GARAGE SHOWCASE (REAL PHOTOS & LUXURY FLEET) -->
+    <!-- ================================================================= -->
+    <!-- ================================================================= -->
+    <!-- 6. PORTFOLIO / GARAGE SHOWCASE (REAL PHOTOS & LUXURY FLEET) -->
+    <!-- ================================================================= -->
+    <section id="portfolio" class="py-24 bg-brand-dark/40 border-t border-white/5 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-orange/30 bg-brand-orange/5 mb-3">
+              <i data-lucide="camera" class="w-3.5 h-3.5 text-brand-orange"></i>
+              <span class="text-xs font-display font-bold tracking-widest uppercase text-brand-orange">Garagem de Projetos Oficiais</span>
+            </div>
+            <h2 class="font-display font-extrabold text-3xl sm:text-5xl uppercase tracking-tight text-white">
+              Mais Que Automóveis, <br>
+              <span class="text-gradient-orange">Obras de Arte Protegidas</span>
+            </h2>
+          </div>
+          <p class="text-brand-textMuted text-xs sm:text-sm max-w-md">
+            Registros reais do estúdio Shinkou. Clique em qualquer projeto para abrir em alta resolução e conferir os níveis de acabamento e reflexo.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-2 mb-10 pb-2 border-b border-white/5 font-display text-xs font-bold tracking-widest uppercase">
+          <button onclick="filterGallery('all')" class="gallery-filter active px-4 py-2 rounded-lg bg-brand-orange text-white transition-all" data-filter="all">
+            Todos os Projetos
+          </button>
+          <button onclick="filterGallery('vitrificacao')" class="gallery-filter px-4 py-2 rounded-lg bg-brand-surface text-zinc-400 hover:text-white border border-white/5 transition-all" data-filter="vitrificacao">
+            Vitrificação & PPF
+          </button>
+          <button onclick="filterGallery('polimento')" class="gallery-filter px-4 py-2 rounded-lg bg-brand-surface text-zinc-400 hover:text-white border border-white/5 transition-all" data-filter="polimento">
+            Polimento & Correção
+          </button>
+          <button onclick="filterGallery('interior')" class="gallery-filter px-4 py-2 rounded-lg bg-brand-surface text-zinc-400 hover:text-white border border-white/5 transition-all" data-filter="interior">
+            Detalhamento Interno
+          </button>
+          <button onclick="filterGallery('motor')" class="gallery-filter px-4 py-2 rounded-lg bg-brand-surface text-zinc-400 hover:text-white border border-white/5 transition-all" data-filter="motor">
+            Cofre de Motor
+          </button>
+        </div>
+
+        <!-- Portfolio Visual Grid (6 Real Studio Projects) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="galleryGrid">
+
+          <!-- Item 1: Real Photo BMW X6 Front -->
+          <div class="gallery-item group relative rounded-2xl overflow-hidden border border-white/10 bg-brand-card aspect-[4/5] glass-card-hover cursor-pointer" 
+               data-category="polimento vitrificacao"
+               onclick="openLightbox('assets/portfolio-bmw-front.jpg', 'BMW X6 • Polimento Técnico & Vitrificação Cerâmica', 'Tratamento óptico em estúdio com malha LED 360°, eliminação de microrriscos no capô e selagem com revestimento 9H.')">
+            <img src="assets/portfolio-bmw-front.jpg" alt="BMW X6 Polimento Técnico Shinkou" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
+            
+            <div class="absolute top-4 left-4">
+              <span class="px-2.5 py-1 rounded bg-brand-orange/90 text-white text-[10px] font-display font-bold uppercase tracking-wider">
+                Polimento Técnico
+              </span>
+            </div>
+
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 p-2 rounded-full text-white">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </div>
+
+            <div class="absolute bottom-6 inset-x-6">
+              <span class="text-[11px] font-mono text-zinc-400">BMW SÉRIE X</span>
+              <h3 class="font-display font-bold text-xl uppercase text-white mt-1">BMW X6 Prata Metálico</h3>
+              <p class="text-xs text-zinc-300 mt-1">Correção e profundidade de brilho sob iluminação técnica de estúdio.</p>
+            </div>
+          </div>
+
+          <!-- Item 2: Real Photo BMW X6 Rear Angle -->
+          <div class="gallery-item group relative rounded-2xl overflow-hidden border border-white/10 bg-brand-card aspect-[4/5] glass-card-hover cursor-pointer" 
+               data-category="polimento vitrificacao"
+               onclick="openLightbox('assets/portfolio-bmw-rear.jpg', 'BMW X6 Traseira • Acabamento Aerodinâmico', 'Detalhamento minucioso de lanternas, black piano, ponteiras e placa oficial Shinkou Car Detail.')">
+            <img src="assets/portfolio-bmw-rear.jpg" alt="BMW X6 Traseira Detalhada Shinkou" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
+            
+            <div class="absolute top-4 left-4">
+              <span class="px-2.5 py-1 rounded bg-brand-orange/90 text-white text-[10px] font-display font-bold uppercase tracking-wider">
+                Acabamento 9H
+              </span>
+            </div>
+
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 p-2 rounded-full text-white">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </div>
+
+            <div class="absolute bottom-6 inset-x-6">
+              <span class="text-[11px] font-mono text-zinc-400">BMW X6 TRASEIRA</span>
+              <h3 class="font-display font-bold text-xl uppercase text-white mt-1">Detalhamento Traseiro</h3>
+              <p class="text-xs text-zinc-300 mt-1">Tratamento de verniz, black piano e difusor com reflexos milimétricos.</p>
+            </div>
+          </div>
+
+          <!-- Item 3: Real Photo Luxury Interior Leather -->
+          <div class="gallery-item group relative rounded-2xl overflow-hidden border border-brand-orange/40 bg-brand-card aspect-[4/5] glass-card-hover cursor-pointer" 
+               data-category="interior"
+               onclick="openLightbox('assets/portfolio-interior-leather.jpg', 'Detalhamento Interno & Couro Nobre Shinkou', 'Higienização a vapor térmico, hidratação fosca de bancos em couro diamantado, painel digital e tapetes protetores personalizados.')">
+            <img src="assets/portfolio-interior-leather.jpg" alt="Detalhamento Interno Shinkou" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
+            
+            <div class="absolute top-4 left-4">
+              <span class="px-2.5 py-1 rounded bg-brand-orange/90 text-white text-[10px] font-display font-bold uppercase tracking-wider">
+                Interior & Couro
+              </span>
+            </div>
+
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 p-2 rounded-full text-white">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </div>
+
+            <div class="absolute bottom-6 inset-x-6">
+              <span class="text-[11px] font-mono text-zinc-400">INTERIOR PREMIUM</span>
+              <h3 class="font-display font-bold text-xl uppercase text-white mt-1">Couro Diamantado & Painel</h3>
+              <p class="text-xs text-zinc-300 mt-1">Higienização com toque natural fosco e odor de carro zero quilômetro.</p>
+            </div>
+          </div>
+
+          <!-- Item 4: Real Photo Black SUV Mirror Angle -->
+          <div class="gallery-item group relative rounded-2xl overflow-hidden border border-white/10 bg-brand-card aspect-[4/5] glass-card-hover cursor-pointer" 
+               data-category="polimento vitrificacao"
+               onclick="openLightbox('assets/portfolio-black-suv-angle.jpg', 'SUV Black Edition • Espelho Negro Profundo', 'Correção milimétrica de verniz preto com iluminação de teto refletida com 100% de nitidez óptica.')">
+            <img src="assets/portfolio-black-suv-angle.jpg" alt="SUV Preto Detalhe Angular Shinkou" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
+            
+            <div class="absolute top-4 left-4">
+              <span class="px-2.5 py-1 rounded bg-brand-orange/90 text-white text-[10px] font-display font-bold uppercase tracking-wider">
+                Espelhamento Black
+              </span>
+            </div>
+
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 p-2 rounded-full text-white">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </div>
+
+            <div class="absolute bottom-6 inset-x-6">
+              <span class="text-[11px] font-mono text-zinc-400">BLACK EDITION SUV</span>
+              <h3 class="font-display font-bold text-xl uppercase text-white mt-1">Reflexo Negro Espelhado</h3>
+              <p class="text-xs text-zinc-300 mt-1">Remoção completa de swirls sob malha de lâmpadas incandescentes e LED.</p>
+            </div>
+          </div>
+
+          <!-- Item 5: Real Photo Land Rover Discovery Front -->
+          <div class="gallery-item group relative rounded-2xl overflow-hidden border border-white/10 bg-brand-card aspect-[4/5] glass-card-hover cursor-pointer" 
+               data-category="vitrificacao"
+               onclick="openLightbox('assets/portfolio-discovery-front.jpg', 'Land Rover Discovery • Vitrificação Cerâmica White Glow', 'Pintura branca perolizada restaurada com selagem cerâmica de alta repelência e proteção UV permanente.')">
+            <img src="assets/portfolio-discovery-front.jpg" alt="Land Rover Discovery Shinkou" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
+            
+            <div class="absolute top-4 left-4">
+              <span class="px-2.5 py-1 rounded bg-brand-orange/90 text-white text-[10px] font-display font-bold uppercase tracking-wider">
+                Vitrificação Full
+              </span>
+            </div>
+
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 p-2 rounded-full text-white">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </div>
+
+            <div class="absolute bottom-6 inset-x-6">
+              <span class="text-[11px] font-mono text-zinc-400">LAND ROVER DISCOVERY</span>
+              <h3 class="font-display font-bold text-xl uppercase text-white mt-1">Brilho Puro White Glow</h3>
+              <p class="text-xs text-zinc-300 mt-1">Pintura clara selada com repelência hidrofóbica extrema a sujeiras da estrada.</p>
+            </div>
+          </div>
+
+          <!-- Item 6: Real Photo Mercedes-Benz Engine Bay -->
+          <div class="gallery-item group relative rounded-2xl overflow-hidden border border-white/10 bg-brand-card aspect-[4/5] glass-card-hover cursor-pointer" 
+               data-category="motor"
+               onclick="openLightbox('assets/portfolio-engine.png', 'Mercedes-Benz • Lavagem Técnica de Motor & Verniz Dielétrico', 'Detalhamento seguro do cofre, remoção técnica de graxa sem água em pressão, proteção com verniz protetor antiestático.')">
+            <img src="assets/portfolio-engine.png" alt="Lavagem de Motor Mercedes-Benz Shinkou" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-transparent"></div>
+            
+            <div class="absolute top-4 left-4">
+              <span class="px-2.5 py-1 rounded bg-brand-orange/90 text-white text-[10px] font-display font-bold uppercase tracking-wider">
+                Cofre de Motor
+              </span>
+            </div>
+
+            <div class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 p-2 rounded-full text-white">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+            </div>
+
+            <div class="absolute bottom-6 inset-x-6">
+              <span class="text-[11px] font-mono text-zinc-400">MERCEDES-BENZ</span>
+              <h3 class="font-display font-bold text-xl uppercase text-white mt-1">Detalhamento de Motor</h3>
+              <p class="text-xs text-zinc-300 mt-1">Limpeza técnica segura sem solventes e aplicação de verniz térmico protetor.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Instagram CTA Link -->
+        <div class="mt-14 text-center">
+          <a href="https://www.instagram.com/shinkou.ea/" target="_blank" rel="noopener noreferrer" 
+             class="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/10 hover:border-brand-orange bg-brand-card/90 text-sm font-display font-bold uppercase tracking-wider text-white hover:text-brand-orange shadow-xl transition-all hover:scale-105">
+            <i data-lucide="instagram" class="w-5 h-5 text-brand-orange"></i>
+            <span>Ver mais de 100+ transformações e vídeos no Instagram @shinkou.ea</span>
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL FOR HIGH-RES IMAGE ZOOM -->
+    <div id="imageLightbox" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl hidden flex items-center justify-center p-4 sm:p-8" onclick="closeLightbox(event)">
+      <div class="relative max-w-4xl w-full bg-brand-card border border-brand-orange/30 rounded-2xl overflow-hidden shadow-2xl" onclick="event.stopPropagation()">
+        
+        <!-- Close button -->
+        <button onclick="closeLightbox()" class="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-black/70 hover:bg-brand-orange text-white flex items-center justify-center transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+
+        <!-- Image Container -->
+        <div class="relative aspect-[16/11] sm:aspect-[16/10] bg-black overflow-hidden">
+          <img id="lightboxImg" src="" alt="Projeto Shinkou em Alta Resolução" class="w-full h-full object-contain">
+        </div>
+
+        <!-- Info bar -->
+        <div class="p-6 bg-brand-dark/95 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h4 id="lightboxTitle" class="font-display font-extrabold text-lg sm:text-xl uppercase text-white tracking-wider"></h4>
+            <p id="lightboxDesc" class="text-xs sm:text-sm text-zinc-400 mt-1"></p>
+          </div>
+          <a href="#contato" onclick="closeLightbox()" class="shrink-0 px-6 py-2.5 rounded-lg bg-brand-orange text-white font-display font-bold text-xs uppercase tracking-wider glow-orange-sm hover:bg-brand-orangeHover transition-all text-center">
+            Quero Este Acabamento
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ================================================================= -->
+    <!-- 7. REVIEWS & TESTIMONIALS (LUXURY CLIENT CONFIDENCE) -->
+    <!-- ================================================================= -->
+    <section id="depoimentos" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <span class="text-xs font-display font-bold tracking-widest uppercase text-brand-orange">Depoimentos Verificados</span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl uppercase tracking-tight text-white">
+          A Confiança de Quem <span class="text-gradient-orange">Ama Seu Carro</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Review 1 -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-4">
+          <div class="flex text-brand-orange gap-1 text-sm">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="text-xs sm:text-sm text-zinc-300 italic leading-relaxed">
+            "Levei meu Porsche para aplicação de PPF frontal e vitrificação completa. O nível de detalhe e o capricho da equipe Shinkou é surreal. O carro saiu da loja parecendo um espelho líquido."
+          </p>
+          <div class="pt-4 border-t border-white/5 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-orange/20 border border-brand-orange/40 flex items-center justify-center font-display font-bold text-brand-orange text-sm">
+              RM
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white uppercase tracking-wider">Rodrigo M.</p>
+              <p class="text-[10px] text-zinc-400">Proprietário de 911 Carrera S</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="glass-card rounded-2xl p-6 border border-brand-orange/30 space-y-4">
+          <div class="flex text-brand-orange gap-1 text-sm">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="text-xs sm:text-sm text-zinc-300 italic leading-relaxed">
+            "Fiz a lavagem técnica de motor e polimento na minha Discovery. Nunca vi ninguém cuidar com tanta cautela dos módulos elétricos. Transparência total por vídeos no WhatsApp!"
+          </p>
+          <div class="pt-4 border-t border-white/5 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-orange/20 border border-brand-orange/40 flex items-center justify-center font-display font-bold text-brand-orange text-sm">
+              FA
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white uppercase tracking-wider">Felipe A.</p>
+              <p class="text-[10px] text-zinc-400">Proprietário Land Rover Discovery</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="glass-card rounded-2xl p-6 border border-white/5 space-y-4">
+          <div class="flex text-brand-orange gap-1 text-sm">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="text-xs sm:text-sm text-zinc-300 italic leading-relaxed">
+            "A higienização interna com proteção para bancos de couro deixou o carro com aroma e toque de 0km sem nenhum aspecto gorduroso. Trabalho de padrão internacional."
+          </p>
+          <div class="pt-4 border-t border-white/5 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-brand-orange/20 border border-brand-orange/40 flex items-center justify-center font-display font-bold text-brand-orange text-sm">
+              GT
+            </div>
+            <div>
+              <p class="text-xs font-bold text-white uppercase tracking-wider">Gabriel T.</p>
+              <p class="text-[10px] text-zinc-400">Proprietário BMW M3</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================================= -->
+    <!-- 8. HIGH-CONVERSION LEAD CAPTURE FORM (INSTANT WHATSAPP INTEGRATION) -->
+    <!-- ================================================================= -->
+    <section id="contato" class="py-24 relative overflow-hidden">
+      
+      <!-- Backlight Glow Behind Form -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-brand-orange/15 rounded-full blur-[140px] pointer-events-none"></div>
+
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="glass-card rounded-3xl p-8 sm:p-12 border border-brand-orange/40 shadow-2xl relative overflow-hidden">
+          
+          <div class="text-center max-w-xl mx-auto mb-10 space-y-3">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-brand-orange/30 bg-brand-orange/10">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-brand-orange"></i>
+              <span class="text-xs font-display font-bold uppercase tracking-widest text-brand-orange">Consultoria Personalizada</span>
+            </div>
+            
+            <h2 class="font-display font-extrabold text-3xl sm:text-5xl uppercase tracking-tight text-white">
+              Agende a Transformação <br>
+              <span class="text-gradient-orange">Do Seu Veículo</span>
+            </h2>
+
+            <p class="text-brand-textMuted text-xs sm:text-sm">
+              Preencha os dados abaixo. Nossa equipe técnica analisará o perfil do seu carro e enviará uma proposta sob medida diretamente no seu WhatsApp.
+            </p>
+          </div>
+
+          <!-- Lead Form -->
+          <form id="leadForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              
+              <!-- Field: Name -->
+              <div class="space-y-2">
+                <label for="clientName" class="block text-xs font-display font-bold uppercase tracking-widest text-zinc-300">
+                  Nome Completo *
+                </label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-zinc-500">
+                    <i data-lucide="user" class="w-4 h-4"></i>
+                  </div>
+                  <input type="text" id="clientName" required placeholder="Ex: Roberto Andrade"
+                         class="w-full pl-10 pr-4 py-3.5 rounded-xl bg-brand-dark/80 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange text-sm transition-all">
+                </div>
+              </div>
+
+              <!-- Field: Phone/WhatsApp -->
+              <div class="space-y-2">
+                <label for="clientPhone" class="block text-xs font-display font-bold uppercase tracking-widest text-zinc-300">
+                  WhatsApp com DDD *
+                </label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-zinc-500">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                  </div>
+                  <input type="tel" id="clientPhone" required placeholder="(11) 99999-9999"
+                         class="w-full pl-10 pr-4 py-3.5 rounded-xl bg-brand-dark/80 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange text-sm transition-all">
+                </div>
+              </div>
+
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              
+              <!-- Field: Car Model & Year -->
+              <div class="space-y-2">
+                <label for="carModel" class="block text-xs font-display font-bold uppercase tracking-widest text-zinc-300">
+                  Modelo & Ano do Veículo *
+                </label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-zinc-500">
+                    <i data-lucide="car" class="w-4 h-4"></i>
+                  </div>
+                  <input type="text" id="carModel" required placeholder="Ex: Porsche 911 2023 / BMW M4"
+                         class="w-full pl-10 pr-4 py-3.5 rounded-xl bg-brand-dark/80 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange text-sm transition-all">
+                </div>
+              </div>
+
+              <!-- Field: Service Selection -->
+              <div class="space-y-2">
+                <label for="serviceInterest" class="block text-xs font-display font-bold uppercase tracking-widest text-zinc-300">
+                  Tratamento de Interesse *
+                </label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-zinc-500">
+                    <i data-lucide="shield" class="w-4 h-4"></i>
+                  </div>
+                  <select id="serviceInterest" required
+                          class="w-full pl-10 pr-8 py-3.5 rounded-xl bg-brand-dark/80 border border-white/10 text-white focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange text-sm transition-all appearance-none">
+                    <option value="" disabled selected>Selecione o procedimento...</option>
+                    <option value="PPF (Paint Protection Film)">PPF (Paint Protection Film)</option>
+                    <option value="Vitrificação Cerâmica (Ceramic Coating)">Vitrificação Cerâmica (Ceramic Coating)</option>
+                    <option value="Polimento Técnico de Pintura">Polimento Técnico de Pintura</option>
+                    <option value="Higienização e Detalhamento Interno">Higienização e Detalhamento Interno</option>
+                    <option value="Lavagem Técnica de Motor">Lavagem Técnica de Motor</option>
+                    <option value="Polimento de Vidros">Polimento de Vidros</option>
+                    <option value="Revitalização de Faróis">Revitalização de Faróis</option>
+                    <option value="Lavagem Detalhada & Descontaminação">Lavagem Detalhada & Descontaminação</option>
+                    <option value="Combo Completo / Vários Serviços">Combo Completo / Avaliação Geral</option>
+                  </select>
+                  <div class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-zinc-500">
+                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Field: Message / Details -->
+            <div class="space-y-2">
+              <label for="clientMessage" class="block text-xs font-display font-bold uppercase tracking-widest text-zinc-300">
+                Observações ou Detalhes Especiais (Opcional)
+              </label>
+              <textarea id="clientMessage" rows="3" placeholder="Conte-nos o estado atual da pintura, cor do carro ou se há urgência na entrega..."
+                        class="w-full px-4 py-3 rounded-xl bg-brand-dark/80 border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange text-sm transition-all"></textarea>
+            </div>
+
+            <!-- Submit Button with Pulse Glow -->
+            <button type="submit" 
+                    class="w-full py-4 px-8 rounded-xl bg-gradient-to-r from-brand-orange to-[#FF5500] hover:from-brand-orangeHover hover:to-brand-orange text-white font-display font-extrabold text-base uppercase tracking-widest glow-orange-sm hover:glow-orange-lg transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-3">
+              <span>Enviar e Solicitar Contato Imediato</span>
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Privacy Assurance -->
+            <p class="text-center text-[11px] text-zinc-500">
+              🔒 Seus dados estão 100% seguros. Não enviamos spam. Atendimento direto pelo especialista.
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================================================================= -->
+  <!-- FOOTER: LUXURY SIGNATURE & CONTACT DETAILS -->
+  <!-- ================================================================= -->
+  <footer class="relative bg-brand-black border-t border-white/10 pt-16 pb-12 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        
+        <!-- Col 1: Brand Info -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg overflow-hidden border border-brand-orange/40 bg-black/80">
+              <img src="assets/logo.jpg" alt="SHINKOU Logo" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <span class="font-display font-extrabold text-xl tracking-[0.2em] text-white">SHINKOU</span>
+              <p class="text-[9px] uppercase tracking-widest text-brand-orange font-bold">Car Detail</p>
+            </div>
+          </div>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Excelência técnica em proteção e restauração de veículos esportivos e luxuosos. Onde a paixão automotiva encontra a máxima precisão estética.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://www.instagram.com/shinkou.ea/" target="_blank" rel="noopener noreferrer" 
+               class="w-9 h-9 rounded-full bg-brand-surface border border-white/10 hover:border-brand-orange flex items-center justify-center text-zinc-400 hover:text-brand-orange transition-colors">
+              <i data-lucide="instagram" class="w-4 h-4"></i>
+            </a>
+            <a href="https://wa.me/5511992644725" target="_blank" rel="noopener noreferrer" 
+               class="w-9 h-9 rounded-full bg-brand-surface border border-white/10 hover:border-brand-orange flex items-center justify-center text-zinc-400 hover:text-brand-orange transition-colors">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h4 class="font-display font-bold text-sm uppercase tracking-widest text-white mb-4">Navegação</h4>
+          <ul class="space-y-2.5 text-xs text-zinc-400">
+            <li><a href="#inicio" class="hover:text-brand-orange transition-colors">Início</a></li>
+            <li><a href="#servicos" class="hover:text-brand-orange transition-colors">Serviços Premium</a></li>
+            <li><a href="#diferenciais" class="hover:text-brand-orange transition-colors">Por Que a Shinkou?</a></li>
+            <li><a href="#portfolio" class="hover:text-brand-orange transition-colors">Galeria de Supercarros</a></li>
+            <li><a href="#contato" class="hover:text-brand-orange transition-colors">Agendamento & Orçamento</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services Shortlist -->
+        <div>
+          <h4 class="font-display font-bold text-sm uppercase tracking-widest text-white mb-4">Especialidades</h4>
+          <ul class="space-y-2.5 text-xs text-zinc-400">
+            <li>PPF (Paint Protection Film)</li>
+            <li>Vitrificação Cerâmica 9H</li>
+            <li>Polimento Técnico Espelhado</li>
+            <li>Lavagem Técnica de Motor</li>
+            <li>Higienização Nobre de Couro</li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Studio Info -->
+        <div class="space-y-3">
+          <h4 class="font-display font-bold text-sm uppercase tracking-widest text-white mb-4">Atendimento & Local</h4>
+          
+          <div class="flex items-start gap-3 text-xs text-zinc-400">
+            <i data-lucide="phone-call" class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"></i>
+            <div>
+              <p class="text-white font-medium">WhatsApp / Comercial:</p>
+              <a href="https://wa.me/5511992644725" target="_blank" class="hover:text-brand-orange transition-colors font-mono">
+                +55 11 99264-4725
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3 text-xs text-zinc-400">
+            <i data-lucide="instagram" class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"></i>
+            <div>
+              <p class="text-white font-medium">Instagram Oficial:</p>
+              <a href="https://www.instagram.com/shinkou.ea/" target="_blank" class="hover:text-brand-orange transition-colors">
+                @shinkou.ea
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3 text-xs text-zinc-400">
+            <i data-lucide="clock" class="w-4 h-4 text-brand-orange shrink-0 mt-0.5"></i>
+            <div>
+              <p class="text-white font-medium">Horário de Funcionamento:</p>
+              <p>Segunda a Sábado • Sob Agendamento</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-[11px] text-zinc-500 gap-4">
+        <p>© <span id="currentYear">2026</span> SHINKOU CAR DETAIL. Todos os direitos reservados.</p>
+        <p class="flex items-center gap-1">
+          Excelência em Estética Automotiva de Luxo
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ================================================================= -->
+  <!-- FLOATING WHATSAPP LEAD BUTTON (ALWAYS ACCESSIBLE CONVERSION) -->
+  <!-- ================================================================= -->
+  <aside class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+    <div class="hidden sm:block bg-brand-card/95 border border-brand-orange/40 text-xs px-3.5 py-2 rounded-xl text-white shadow-2xl backdrop-blur-md animate-bounce">
+      <span class="text-brand-orange font-bold font-display uppercase tracking-wider">Online agora:</span> Fale com o Especialista
+    </div>
+    <a href="https://wa.me/5511992644725?text=Ol%C3%A1%21+Vim+pelo+site+da+Shinkou+e+gostaria+de+solicitar+um+or%C3%A7amento+exclusivo." 
+       target="_blank" rel="noopener noreferrer"
+       class="w-14 h-14 rounded-full bg-brand-orange hover:bg-brand-orangeHover text-white flex items-center justify-center shadow-[0_0_25px_rgba(255,69,0,0.7)] hover:scale-110 transition-all duration-300"
+       title="Falar no WhatsApp com a Shinkou">
+      <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+  </aside>
+
+
+  <!-- ================================================================= -->
+  <!-- SCRIPTS: INTERACTIVE LOGIC & LEAD GENERATOR -->
+  <!-- ================================================================= -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Set current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Accordion Toggle for Differentiators
+    function toggleAccordion(id) {
+      const el = document.getElementById(id);
+      const icon = document.getElementById('icon-' + id);
+      const isHidden = el.classList.contains('hidden');
+      
+      // Close all other accordions
+      ['acc-1', 'acc-2', 'acc-3', 'acc-4'].forEach(item => {
+        const itemEl = document.getElementById(item);
+        const itemIcon = document.getElementById('icon-' + item);
+        if (itemEl && item !== id) {
+          itemEl.classList.add('hidden');
+          if (itemIcon) itemIcon.classList.remove('rotate-180');
+        }
+      });
+
+      if (isHidden) {
+        el.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        el.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    }
+
+    // Auto-select service in form when clicked from service card
+    function selectService(serviceName) {
+      const select = document.getElementById('serviceInterest');
+      if (select) {
+        select.value = serviceName;
+      }
+    }
+
+    // Interactive Before & After Comparison Slider
+    const comparisonSlider = document.getElementById('comparisonSlider');
+    const beforeOverlay = document.getElementById('beforeOverlay');
+    const sliderHandle = document.getElementById('sliderHandle');
+
+    if (comparisonSlider && beforeOverlay && sliderHandle) {
+      comparisonSlider.addEventListener('input', (e) => {
+        const value = e.target.value;
+        beforeOverlay.style.width = value + '%';
+        sliderHandle.style.left = value + '%';
+      });
+    }
+
+    // Dynamic Lead Form Submission: Formats and redirects straight to WhatsApp
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('clientName').value.trim();
+      const phone = document.getElementById('clientPhone').value.trim();
+      const car = document.getElementById('carModel').value.trim();
+      const service = document.getElementById('serviceInterest').value;
+      const notes = document.getElementById('clientMessage').value.trim();
+
+      if (!name || !phone || !car || !service) {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+        return;
+      }
+
+      // Format WhatsApp Message
+      let text = `🔥 *NOVO AGENDAMENTO / ORÇAMENTO - SHINKOU DETAIL*\n\n`;
+      text += `👤 *Cliente:* ${name}\n`;
+      text += `📱 *Telefone/WhatsApp:* ${phone}\n`;
+      text += `🚗 *Veículo:* ${car}\n`;
+      text += `🛠️ *Serviço de Interesse:* ${service}\n`;
+      if (notes) {
+        text += `📝 *Observações:* ${notes}\n`;
+      }
+      text += `\n_Enviado através da Landing Page Oficial Shinkou_`;
+
+      const encodedText = encodeURIComponent(text);
+      const whatsappUrl = `https://wa.me/5511992644725?text=${encodedText}`;
+
+      // Open WhatsApp in new tab
+      window.open(whatsappUrl, '_blank');
+
+      // Visual Confirmation Feedback
+      alert('Obrigado, ' + name + '! Você será redirecionado para o WhatsApp da Shinkou para finalizar sua avaliação técnica.');
+      document.getElementById('leadForm').reset();
+    }
+
+    // Hero Car Switcher Logic
+    function switchHeroCar(imgSrc, badge, subtitle, title, btnEl) {
+      const img = document.getElementById('heroVehicleImg');
+      const badgeEl = document.getElementById('heroBadgeText');
+      const subEl = document.getElementById('heroSubText');
+      const titleEl = document.getElementById('heroTitleText');
+
+      if (img) img.src = imgSrc;
+      if (badgeEl) badgeEl.textContent = badge;
+      if (subEl) subEl.textContent = subtitle;
+      if (titleEl) titleEl.textContent = title;
+
+      document.querySelectorAll('.hero-car-tab').forEach(btn => {
+        btn.classList.remove('active', 'bg-brand-orange', 'text-white', 'border-brand-orange/40');
+        btn.classList.add('bg-brand-black/80', 'text-zinc-300', 'border-white/15');
+      });
+
+      if (btnEl) {
+        btnEl.classList.add('active', 'bg-brand-orange', 'text-white', 'border-brand-orange/40');
+        btnEl.classList.remove('bg-brand-black/80', 'text-zinc-300', 'border-white/15');
+      }
+    }
+
+    // Gallery Category Filtering
+    function filterGallery(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      const filterBtns = document.querySelectorAll('.gallery-filter');
+
+      filterBtns.forEach(btn => {
+        if (btn.getAttribute('data-filter') === category) {
+          btn.classList.add('bg-brand-orange', 'text-white');
+          btn.classList.remove('bg-brand-surface', 'text-zinc-400');
+        } else {
+          btn.classList.remove('bg-brand-orange', 'text-white');
+          btn.classList.add('bg-brand-surface', 'text-zinc-400');
+        }
+      });
+
+      items.forEach(item => {
+        const itemCategories = item.getAttribute('data-category') || '';
+        if (category === 'all' || itemCategories.includes(category)) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    }
+
+    // Lightbox Modal Logic
+    function openLightbox(imgSrc, title, desc) {
+      const modal = document.getElementById('imageLightbox');
+      const img = document.getElementById('lightboxImg');
+      const titleEl = document.getElementById('lightboxTitle');
+      const descEl = document.getElementById('lightboxDesc');
+
+      if (modal && img) {
+        img.src = imgSrc;
+        titleEl.textContent = title || 'Projeto Shinkou Car Detail';
+        descEl.textContent = desc || '';
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        lucide.createIcons();
+      }
+    }
+
+    function closeLightbox(e) {
+      const modal = document.getElementById('imageLightbox');
+      if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Escape key to close modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Navbar scroll background effect
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('shadow-2xl', 'bg-brand-black/95');
+      } else {
+        navbar.classList.remove('shadow-2xl');
+      }
+    });
+  </script>
+
+</body>
+</html>
